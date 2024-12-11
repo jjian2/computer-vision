@@ -4,4 +4,5 @@
 - 특정 구간에서 위험 수준이 높으면 알림 전송.
 활동 분야는 동물을 보호하는 것 과, 도로의 안전을 위함
 --------------------------------------------------------
-참고 문헌 - https://journal-home.s3.ap-northeast-2.amazonaws.com/site/koreaai2022/abs/0085F.pdf
+# 참고 문헌
+- https://journal-home.s3.ap-northeast-2.amazonaws.com/site/koreaai2022/abs/0085F.pdf
