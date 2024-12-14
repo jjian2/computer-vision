@@ -43,20 +43,35 @@ OpenCV로 영상 처리:
 
 - 감지 결과 비디오를 사용자가 다운로드하거나 시청할 수 있도록 반환.
 
-cap = cv2.VideoCapture(video_path)  # 동영상 파일 열기
-fourcc = cv2.VideoWriter_fourcc(*'mp4v')  # 출력 코덱 설정
-fps = int(cap.get(cv2.CAP_PROP_FPS))  # 원본 프레임 속도 유지
-width = int(cap.get(cv2.CAP_PROP_FRAME_WIDTH))
-height = int(cap.get(cv2.CAP_PROP_FRAME_HEIGHT))
-out = cv2.VideoWriter(output_path, fourcc, fps, (width, height))  # 출력 파일 설정
+영상 처리 코드: 
 
-while cap.isOpened():
-    ret, frame = cap.read()
-    if not ret:
-        break
-    results = model(frame)  # YOLO로 객체 감지
-    results.render()  # 바운딩 박스 추가
-    out.write(results.ims[0])  # 감지 결과 프레임 저장
+영상 처리 루프
+![12](https://github.com/user-attachments/assets/d0cdffc2-cc11-4447-87d7-8c46d9b25594)
 
-cap.release()
-out.release()
+flask 라우트
+![13](https://github.com/user-attachments/assets/06064332-c837-4148-a86d-edcfbb10c0e9)
+
+# 웹캠으로 실시간 감지를 처리할 경우
+
+OpenCV로 웹캠 연결:
+
+- cv2.VideoCapture(0)을 사용하여 웹캠 스트림을 연결.
+  
+실시간 감지:
+
+- 각 프레임에서 YOLO 모델로 객체 감지를 수행하고 화면에 표시.
+  
+종료 처리:
+
+- 키 입력(q)으로 스트리밍을 종료.
+
+웹캠 처리 코드
+
+실시간 웹캠 감지 루프:
+![12](https://github.com/user-attachments/assets/7dae2648-53fa-4866-9aea-b28dbc5dfc5d)
+
+Flask와 연동:
+  
+- 실시간 웹캠 스트리밍은 Flask-SocketIO 또는 Flask Video Streaming을 활용하여 웹에서 제공 가능.
+- OpenCV로 캡처한 프레임을 HTTP 응답으로 전송.
+
