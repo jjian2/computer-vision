@@ -22,7 +22,22 @@
 - 파일 업로드: 사용자가 이미지를 업로드.
 - YOLO 모델 로드 및 감지: 업로드된 이미지에서 객체를 감지.
 ```
-Object recognition-based guidance system for the visually impaired
+def load_model():
+    model = torch.hub.load('ultralytics/yolov5', 'yolov5n', pretrained=True)  # YOLO 모델 로드
+    model.eval()
+    return model
+
+def detect_objects(model, input_path, output_path):
+    img = Image.open(input_path).convert('RGB')  # 이미지 로드
+    results = model(img)  # YOLO로 객체 감지 수행
+    results.render()  # 결과 이미지에 바운딩 박스 추가
+
+    # 결과 이미지 저장
+    result_img = Image.fromarray(results.ims[0])
+    result_img.save(output_path)
+
+    # 감지된 객체 정보 반환
+    return results.pandas().xyxy[0]  # Bounding Box, 클래스, 신뢰도 정보
 ```
 - 결과 저장 및 반환: 감지된 이미지를 저장하고, 객체 정보를 템플릿에 전달.
 - 웹 프론트엔드 연결: 결과를 HTML 템플릿을 통해 사용자에게 표시.
