@@ -1,7 +1,8 @@
 # Object recognition services for the visually impaired
 ![1111](https://github.com/user-attachments/assets/8af4e06d-d85c-4727-bbbf-b8b41233154f)
-![2222222](https://github.com/user-attachments/assets/10c1a171-d754-4393-bab6-1a0f6deb4598)
 ![3333333](https://github.com/user-attachments/assets/1d655a2d-c12c-4bc9-9685-a017b3b1a3af)
+![2222222](https://github.com/user-attachments/assets/10c1a171-d754-4393-bab6-1a0f6deb4598)
+![Uploading 캡처.PNG…]()
 
 - 도로 주변의 야생동물을 감지하여 차량 운전자에게 경고.
 - 도로 CCTV나 차량 대시캠을 활용해 동물 객체를 실시간으로 감지.
