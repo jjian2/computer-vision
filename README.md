@@ -21,7 +21,9 @@
 
 - 파일 업로드: 사용자가 이미지를 업로드.
 - YOLO 모델 로드 및 감지: 업로드된 이미지에서 객체를 감지.
-  <Object recognition-based guidance system for the visually impaired>
+'''
+Object recognition-based guidance system for the visually impaired
+'''
 - 결과 저장 및 반환: 감지된 이미지를 저장하고, 객체 정보를 템플릿에 전달.
 - 웹 프론트엔드 연결: 결과를 HTML 템플릿을 통해 사용자에게 표시.
 
