@@ -75,3 +75,5 @@ Flask와 연동:
 - 실시간 웹캠 스트리밍은 Flask-SocketIO 또는 Flask Video Streaming을 활용하여 웹에서 제공 가능.
 - OpenCV로 캡처한 프레임을 HTTP 응답으로 전송.
 
+# 주요 차이점
+![1313](https://github.com/user-attachments/assets/144d87e0-1d00-4ecd-a7f5-5aac67828f25)
