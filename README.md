@@ -1,5 +1,5 @@
 # Object recognition-based guidance system for the visually impaired
-<img src="https://github.com/user-attachments/assets/8af4e06d-d85c-4727-bbbf-b8b41233154f.png" width="300" height="300">
+<img src="https://github.com/user-attachments/assets/1d655a2d-c12c-4bc9-9685-a017b3b1a3af.png" width="300" height="300">
 
 ![1111](https://github.com/user-attachments/assets/8af4e06d-d85c-4727-bbbf-b8b41233154f) ![3333333](https://github.com/user-attachments/assets/1d655a2d-c12c-4bc9-9685-a017b3b1a3af)
 ![2222222](https://github.com/user-attachments/assets/10c1a171-d754-4393-bab6-1a0f6deb4598) ![444444](https://github.com/user-attachments/assets/2cdf18df-c7e4-49d6-9d8e-13ff7335df28)
