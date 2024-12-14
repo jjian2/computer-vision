@@ -112,7 +112,22 @@ OpenCV로 웹캠 연결:
 
 - 실시간 웹캠 감지 루프:
 
-![12](https://github.com/user-attachments/assets/7dae2648-53fa-4866-9aea-b28dbc5dfc5d)
+```
+cap = cv2.VideoCapture(0)  # 웹캠 연결
+while True:
+    ret, frame = cap.read()
+    if not ret:
+        break
+    results = model(frame)  # YOLO로 객체 감지
+    results.render()  # 바운딩 박스 추가
+    cv2.imshow('Webcam', results.ims[0])  # 결과 프레임을 화면에 표시
+
+    if cv2.waitKey(1) & 0xFF == ord('q'):  # 'q' 키 입력 시 종료
+        break
+
+cap.release()
+cv2.destroyAllWindows()
+```
 
 - Flask와 연동:
   
