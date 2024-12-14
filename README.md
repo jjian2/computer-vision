@@ -83,7 +83,16 @@ out.release()
 ```
 
 - flask 라우트
-
+```
+@app.route('/process_video', methods=['POST'])
+def process_video():
+    file = request.files['file']
+    video_path = os.path.join(app.config['UPLOAD_FOLDER'], file.filename)
+    output_path = os.path.join(app.config['DETECTION_FOLDER'], file.filename)
+    file.save(video_path)
+    detect_objects_in_video(model, video_path, output_path)
+    return render_template('result.html', video_path=output_path)
+```
 
 # 웹캠으로 실시간 감지를 처리할 경우
 
