@@ -25,3 +25,38 @@
 - YOLO 모델 로드 및 감지: 업로드된 이미지에서 객체를 감지.
 - 결과 저장 및 반환: 감지된 이미지를 저장하고, 객체 정보를 템플릿에 전달.
 - 웹 프론트엔드 연결: 결과를 HTML 템플릿을 통해 사용자에게 표시.
+
+ # 영상 파일을 처리할 경우
+ 
+ 영상 파일 업로드:
+ 
+- 사용자가 동영상을 업로드하도록 <form>에서 accept="video/*"를 추가.
+- 업로드된 동영상을 Flask에서 처리하여 저장.
+  
+OpenCV로 영상 처리:
+
+- cv2.VideoCapture로 동영상을 읽어 프레임 단위로 처리.
+- YOLO 모델로 각 프레임을 처리하여 객체 감지 수행.
+- 감지 결과를 새 비디오 파일로 저장.
+  
+영상 파일 출력:
+
+- 감지 결과 비디오를 사용자가 다운로드하거나 시청할 수 있도록 반환.
+
+cap = cv2.VideoCapture(video_path)  # 동영상 파일 열기
+fourcc = cv2.VideoWriter_fourcc(*'mp4v')  # 출력 코덱 설정
+fps = int(cap.get(cv2.CAP_PROP_FPS))  # 원본 프레임 속도 유지
+width = int(cap.get(cv2.CAP_PROP_FRAME_WIDTH))
+height = int(cap.get(cv2.CAP_PROP_FRAME_HEIGHT))
+out = cv2.VideoWriter(output_path, fourcc, fps, (width, height))  # 출력 파일 설정
+
+while cap.isOpened():
+    ret, frame = cap.read()
+    if not ret:
+        break
+    results = model(frame)  # YOLO로 객체 감지
+    results.render()  # 바운딩 박스 추가
+    out.write(results.ims[0])  # 감지 결과 프레임 저장
+
+cap.release()
+out.release()
