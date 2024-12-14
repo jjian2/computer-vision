@@ -45,11 +45,11 @@ OpenCV로 영상 처리:
 
 영상 처리 코드: 
 
-영상 처리 루프
+- 영상 처리 루프
 
 ![12](https://github.com/user-attachments/assets/d0cdffc2-cc11-4447-87d7-8c46d9b25594)
 
-flask 라우트
+- flask 라우트
 
 ![13](https://github.com/user-attachments/assets/06064332-c837-4148-a86d-edcfbb10c0e9)
 
@@ -69,11 +69,11 @@ OpenCV로 웹캠 연결:
 
 웹캠 처리 코드
 
-실시간 웹캠 감지 루프:
+- 실시간 웹캠 감지 루프:
 
 ![12](https://github.com/user-attachments/assets/7dae2648-53fa-4866-9aea-b28dbc5dfc5d)
 
-Flask와 연동:
+- Flask와 연동:
   
 - 실시간 웹캠 스트리밍은 Flask-SocketIO 또는 Flask Video Streaming을 활용하여 웹에서 제공 가능.
 - OpenCV로 캡처한 프레임을 HTTP 응답으로 전송.
