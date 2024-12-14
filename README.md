@@ -135,5 +135,8 @@ cv2.destroyAllWindows()
 - OpenCV로 캡처한 프레임을 HTTP 응답으로 전송.
 
 # 주요 차이점
-
-![1313](https://github.com/user-attachments/assets/144d87e0-1d00-4ecd-a7f5-5aac67828f25)
+| 항목  | 영상 파일 처리 | 웹캠 실시간 감지 |
+| ------------- | ------------- | ------------- |
+| 입력 방식  | 동영상 파일 업로드  | Content Cell  |
+| 처리 방식  | 프레임 단위로 처리 후 새 파일로 저장  | Content Cell  |
+| Flask 응용 | 비디오 업로드 및 감지 결과 반환  | Content Cell  |
