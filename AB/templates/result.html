@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>객체 감지 결과</title>
+</head>
+<body>
+    <h1>객체 감지 결과</h1>
+    <h2>감지된 객체:</h2>
+    <ul>
+        {% for detection in detections %}
+        <li>{{ detection['name'] }} (신뢰도: {{ detection['confidence']|round(2) }})</li>
+        {% endfor %}
+    </ul>
+    <h2>결과 이미지:</h2>
+    <img src="/detections/{{ filename }}" alt="Detection Result" style="max-width: 400px;">
+    <br>
+    <a href="/">다른 이미지 업로드</a>
+</body>
+</html>
